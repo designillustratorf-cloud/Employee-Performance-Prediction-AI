@@ -181,125 +181,125 @@ def get_form_data():
 
         "Age":
             safe_int(
-                request.form.get("age")
+                request.form.get("Age")
             ),
 
         "Gender":
-            request.form.get("gender"),
+            request.form.get("Gender"),
 
         "Marital_Status":
-            request.form.get("marital_status"),
+            request.form.get("Marital_Status"),
 
         "Department":
-            request.form.get("department"),
+            request.form.get("Department"),
 
         "Job_Role":
-            request.form.get("job_role"),
+            request.form.get("Job_Role"),
 
         "Job_Level":
             safe_int(
-                request.form.get("job_level")
+                request.form.get("Job_Level")
             ),
 
         "Monthly_Income":
             safe_float(
-                request.form.get("monthly_income")
+                request.form.get("Monthly_Income")
             ),
 
         "Hourly_Rate":
             safe_float(
-                request.form.get("hourly_rate")
+                request.form.get("Hourly_Rate")
             ),
 
         "Years_at_Company":
             safe_int(
-                request.form.get("years_at_company")
+                request.form.get("Years_at_Company")
             ),
 
-        "Years_In_Current_Role":
+        "Years_in_Current_Role":
             safe_int(
-                request.form.get("years_in_current_role")
+                request.form.get("Years_in_Current_Role")
             ),
 
         "Years_Since_Last_Promotion":
             safe_int(
-                request.form.get("years_since_last_promotion")
+                request.form.get("Years_Since_Last_Promotion")
             ),
 
         "Work_Life_Balance":
             safe_int(
-                request.form.get("work_life_balance")
+                request.form.get("Work_Life_Balance")
             ),
 
         "Job_Satisfaction":
             safe_int(
-                request.form.get("job_satisfaction")
+                request.form.get("Job_Satisfaction")
             ),
 
         "Performance_Rating":
             safe_int(
-                request.form.get("performance_rating")
+                request.form.get("Performance_Rating")
             ),
 
         "Training_Hours_Last_Year":
             safe_int(
-                request.form.get("training_hours_last_year")
+                request.form.get("Training_Hours_Last_Year")
             ),
 
         "Overtime":
-            request.form.get("overtime"),
+            request.form.get("Overtime"),
 
         "Project_Count":
             safe_int(
-                request.form.get("project_count")
+                request.form.get("Project_Count")
             ),
 
         "Average_Hours_Worked_Per_Week":
             safe_float(
                 request.form.get(
-                    "average_hours_worked_per_week"
+                    "Average_Hours_Worked_Per_Week"
                 )
             ),
 
         "Absenteeism":
             safe_float(
                 request.form.get(
-                    "absenteeism"
+                    "Absenteeism"
                 )
             ),
 
         "Work_Environment_Satisfaction":
             safe_int(
                 request.form.get(
-                    "work_environment_satisfaction"
+                    "Work_Environment_Satisfaction"
                 )
             ),
 
-        "Relationship_With_Manager":
+        "Relationship_with_Manager":
             safe_int(
                 request.form.get(
-                    "relationship_with_manager"
+                    "Relationship_with_Manager"
                 )
             ),
 
         "Job_Involvement":
             safe_int(
                 request.form.get(
-                    "job_involvement"
+                    "Job_Involvement"
                 )
             ),
 
         "Distance_From_Home":
             safe_float(
                 request.form.get(
-                    "distance_from_home"
+                    "Distance_From_Home"
                 )
             ),
 
-        "Number_Of_Companies_Worked":
+        "Number_of_Companies_Worked":
             safe_int(
                 request.form.get(
-                    "number_of_companies_worked"
+                    "Number_of_Companies_Worked"
                 )
             )
 
@@ -419,7 +419,7 @@ def predict():
 
             years_at_company=form_data["Years_at_Company"],
 
-            years_in_current_role=form_data["Years_In_Current_Role"],
+            years_in_current_role=form_data["Years_in_Current_Role"],
 
             years_since_last_promotion=form_data[
                 "Years_Since_Last_Promotion"
@@ -462,7 +462,7 @@ def predict():
             ],
 
             relationship_with_manager=form_data[
-                "Relationship_With_Manager"
+                "Relationship_with_Manager"
             ],
 
             job_involvement=form_data[
@@ -474,7 +474,7 @@ def predict():
             ],
 
             number_of_companies_worked=form_data[
-                "Number_Of_Companies_Worked"
+                "Number_of_Companies_Worked"
             ],
 
             prediction=prediction,
