@@ -206,14 +206,19 @@ http://127.0.0.1:5000
 ## Screenshots
 
 Home
+<img width="1917" height="931" alt="image" src="https://github.com/user-attachments/assets/c994d07e-f384-49d7-9d31-e059e27a4ee4" />
 
 Dashboard
+<img width="1917" height="928" alt="image" src="https://github.com/user-attachments/assets/753b39f3-e2d5-45b6-b533-27e12ee77aa3" />
 
 Prediction Result
+<img width="1917" height="932" alt="image" src="https://github.com/user-attachments/assets/a95377c1-f36e-4e33-8527-c483350af57e" />
 
 History
+<img width="1917" height="781" alt="image" src="https://github.com/user-attachments/assets/904251c4-dcf2-4cb1-9ae8-af44cbdaa362" />
 
 About
+<img width="1917" height="820" alt="image" src="https://github.com/user-attachments/assets/270785dd-5a6f-4664-8a16-ddf1e81c55a3" />
 
 ---
 
