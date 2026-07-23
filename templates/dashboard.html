@@ -1,0 +1,461 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Dashboard | {{ project_name }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row mb-4">
+
+    <div class="col-12">
+
+        <h2 class="text-primary">
+
+            <i class="bi bi-speedometer2"></i>
+
+            Model Dashboard
+
+        </h2>
+
+        <p class="text-muted">
+
+            Dashboard ini menampilkan ringkasan performa model
+            Artificial Neural Network (ANN) yang digunakan untuk
+            memprediksi Employee Attrition.
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- METRIC CARD -->
+<!-- ========================================= -->
+
+<div class="row g-4 mb-4">
+
+    <div class="col-lg-3 col-md-6">
+
+        <div class="card shadow border-0 text-center h-100">
+
+            <div class="card-body">
+
+                <i class="bi bi-bullseye display-4 text-primary"></i>
+
+                <h6 class="mt-3">
+
+                    Accuracy
+
+                </h6>
+
+                <h2 class="fw-bold text-primary">
+
+                    {{ "%.2f"|format(metrics.accuracy * 100) }}%
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+
+        <div class="card shadow border-0 text-center h-100">
+
+            <div class="card-body">
+
+                <i class="bi bi-check2-circle display-4 text-success"></i>
+
+                <h6 class="mt-3">
+
+                    Precision
+
+                </h6>
+
+                <h2 class="fw-bold text-success">
+
+                    {{ "%.2f"|format(metrics.precision * 100) }}%
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+
+        <div class="card shadow border-0 text-center h-100">
+
+            <div class="card-body">
+
+                <i class="bi bi-arrow-repeat display-4 text-warning"></i>
+
+                <h6 class="mt-3">
+
+                    Recall
+
+                </h6>
+
+                <h2 class="fw-bold text-warning">
+
+                    {{ "%.2f"|format(metrics.recall * 100) }}%
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+
+        <div class="card shadow border-0 text-center h-100">
+
+            <div class="card-body">
+
+                <i class="bi bi-award display-4 text-danger"></i>
+
+                <h6 class="mt-3">
+
+                    F1 Score
+
+                </h6>
+
+                <h2 class="fw-bold text-danger">
+
+                    {{ "%.2f"|format(metrics.f1 * 100) }}%
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- SECOND ROW -->
+<!-- ========================================= -->
+
+<div class="row g-4">
+    <!-- ROC AUC -->
+
+<div class="col-lg-6">
+
+    <div class="card shadow border-0 h-100">
+
+        <div class="card-header bg-success text-white">
+
+            <h5 class="mb-0">
+
+                <i class="bi bi-graph-up-arrow"></i>
+
+                ROC AUC Score
+
+            </h5>
+
+        </div>
+
+        <div class="card-body text-center">
+
+            <h1 class="display-4 fw-bold text-success">
+
+                {{ "%.2f"|format(metrics.roc * 100) }}%
+
+            </h1>
+
+            <p class="text-muted">
+
+                Area Under ROC Curve menunjukkan kemampuan model
+                dalam membedakan kelas Attrition.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Total Prediction -->
+
+<div class="col-lg-6">
+
+    <div class="card shadow border-0 h-100">
+
+        <div class="card-header bg-info text-white">
+
+            <h5 class="mb-0">
+
+                <i class="bi bi-clock-history"></i>
+
+                Prediction History
+
+            </h5>
+
+        </div>
+
+        <div class="card-body text-center">
+
+            <h1 class="display-4 fw-bold text-info">
+
+                {{ total_prediction }}
+
+            </h1>
+
+            <p class="text-muted">
+
+                Total prediksi yang telah disimpan
+                pada database aplikasi.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- TRAINING GRAPH -->
+<!-- ========================================= -->
+
+<div class="row mt-4">
+
+    <div class="col-lg-6 mb-4">
+
+        <div class="card shadow border-0">
+
+            <div class="card-header bg-primary text-white">
+
+                <h5 class="mb-0">
+
+                    <i class="bi bi-bar-chart-line-fill"></i>
+
+                    Training Accuracy
+
+                </h5>
+
+            </div>
+
+            <div class="card-body text-center">
+
+                <img
+
+                    src="{{ url_for('static', filename='eda/training_accuracy.png') }}"
+
+                    class="img-fluid rounded"
+
+                    alt="Training Accuracy">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6 mb-4">
+
+        <div class="card shadow border-0">
+
+            <div class="card-header bg-danger text-white">
+
+                <h5 class="mb-0">
+
+                    <i class="bi bi-activity"></i>
+
+                    Training Loss
+
+                </h5>
+
+            </div>
+
+            <div class="card-body text-center">
+
+                <img
+
+                    src="{{ url_for('static', filename='eda/training_loss.png') }}"
+
+                    class="img-fluid rounded"
+
+                    alt="Training Loss">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- MODEL VISUALIZATION -->
+<!-- ========================================= -->
+
+<div class="row">
+    <!-- ROC Curve -->
+
+<div class="col-lg-6 mb-4">
+
+    <div class="card shadow border-0 h-100">
+
+        <div class="card-header bg-success text-white">
+
+            <h5 class="mb-0">
+
+                <i class="bi bi-graph-up"></i>
+
+                ROC Curve
+
+            </h5>
+
+        </div>
+
+        <div class="card-body text-center">
+
+            <img
+
+                src="{{ url_for('static', filename='eda/roc_curve.png') }}"
+
+                class="img-fluid rounded"
+
+                alt="ROC Curve">
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Confusion Matrix -->
+
+<div class="col-lg-6 mb-4">
+
+    <div class="card shadow border-0 h-100">
+
+        <div class="card-header bg-warning text-dark">
+
+            <h5 class="mb-0">
+
+                <i class="bi bi-grid-3x3-gap-fill"></i>
+
+                Confusion Matrix
+
+            </h5>
+
+        </div>
+
+        <div class="card-body text-center">
+
+            <img
+
+                src="{{ url_for('static', filename='eda/confusion_matrix.png') }}"
+
+                class="img-fluid rounded"
+
+                alt="Confusion Matrix">
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- CLASSIFICATION REPORT -->
+<!-- ========================================= -->
+
+<div class="row">
+
+    <div class="col-12">
+
+        <div class="card shadow border-0">
+
+            <div class="card-header bg-dark text-white">
+
+                <h5 class="mb-0">
+
+                    <i class="bi bi-file-earmark-text-fill"></i>
+
+                    Classification Report
+
+                </h5>
+
+            </div>
+
+            <div class="card-body">
+
+                <pre class="mb-0">{{ metrics.report }}</pre>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- ACTION BUTTON -->
+<!-- ========================================= -->
+
+<div class="row mt-4">
+
+    <div class="col-12 text-center">
+
+        <a
+
+            href="{{ url_for('index') }}"
+
+            class="btn btn-primary btn-lg me-2">
+
+            <i class="bi bi-house-fill"></i>
+
+            Home
+
+        </a>
+
+        <a
+
+            href="{{ url_for('history') }}"
+
+            class="btn btn-success btn-lg me-2">
+
+            <i class="bi bi-clock-history"></i>
+
+            History
+
+        </a>
+
+        <a
+
+            href="{{ url_for('about') }}"
+
+            class="btn btn-secondary btn-lg">
+
+            <i class="bi bi-info-circle-fill"></i>
+
+            About
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,351 @@
+/* =======================================================
+   Employee Attrition Prediction
+   Main Stylesheet
+======================================================= */
+
+html,
+body{
+    min-height:100%;
+}
+
+body{
+
+    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
+
+    background:#f4f7fb;
+
+    color:#333;
+
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+}
+
+.navbar-brand{
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+.nav-link{
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:#ffd54f !important;
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.display-5{
+
+    font-weight:700;
+
+}
+
+.lead{
+
+    color:#555;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.card{
+
+    border:none;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.card-header{
+
+    border-top-left-radius:16px !important;
+
+    border-top-right-radius:16px !important;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.btn{
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-control,
+
+.form-select{
+
+    border-radius:10px;
+
+}
+
+.form-control:focus,
+
+.form-select:focus{
+
+    border-color:#0d6efd;
+
+    box-shadow:0 0 10px rgba(13,110,253,.25);
+
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table{
+
+    vertical-align:middle;
+
+}
+
+.table th{
+
+    white-space:nowrap;
+
+}
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.badge{
+
+    padding:8px 12px;
+
+    font-size:.85rem;
+
+}
+
+/* ==========================================
+   ALERT
+========================================== */
+
+.alert{
+
+    border:none;
+
+    border-radius:12px;
+
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+img{
+
+    max-width:100%;
+
+}
+
+.card img{
+
+    border-radius:12px;
+
+}
+
+/* ==========================================
+   DASHBOARD METRIC
+========================================== */
+
+.display-4{
+
+    font-weight:700;
+
+}
+
+/* ==========================================
+   PRE
+========================================== */
+
+pre{
+
+    white-space:pre-wrap;
+
+    word-wrap:break-word;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    margin-top:60px;
+
+}
+
+footer h5,
+
+footer h6{
+
+    font-weight:600;
+
+}
+
+footer a{
+
+    transition:.3s;
+
+}
+
+footer a:hover{
+
+    color:#ffd54f !important;
+
+}
+
+/* ==========================================
+   SPINNER
+========================================== */
+
+.spinner-border{
+
+    vertical-align:middle;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0d6efd;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#084298;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .display-5{
+
+        font-size:2.2rem;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .display-1{
+
+        font-size:4rem;
+
+    }
+
+    .display-4{
+
+        font-size:2.2rem;
+
+    }
+
+    .card{
+
+        margin-bottom:20px;
+
+    }
+
+    .btn-lg{
+
+        width:100%;
+
+        margin-bottom:10px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .navbar-brand{
+
+        font-size:1rem;
+
+    }
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    h2{
+
+        font-size:1.7rem;
+
+    }
+
+}

@@ -1,0 +1,414 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+History Detail | {{ project_name }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-10">
+
+        <div class="card shadow border-0">
+
+            <div class="card-header bg-primary text-white">
+
+                <h3 class="mb-0">
+
+                    <i class="bi bi-file-earmark-person-fill"></i>
+
+                    Prediction Detail
+
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row mb-4">
+
+                    <div class="col-md-6">
+
+                        <h5>
+
+                            Prediction ID
+
+                        </h5>
+
+                        <h3>
+
+                            #{{ history.id }}
+
+                        </h3>
+
+                    </div>
+
+                    <div class="col-md-6 text-md-end">
+
+                        <h5>
+
+                            Prediction Date
+
+                        </h5>
+
+                        <h5>
+
+                            {{ history.created_at.strftime("%d %B %Y %H:%M") }}
+
+                        </h5>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="row text-center mb-4">
+
+                    <div class="col-md-6">
+
+                        {% if history.prediction == "Yes" %}
+
+                        <div class="alert alert-danger">
+
+                            <h3>
+
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+
+                                Attrition
+
+                            </h3>
+
+                            <h5>
+
+                                Employee is predicted to leave.
+
+                            </h5>
+
+                        </div>
+
+                        {% else %}
+
+                        <div class="alert alert-success">
+
+                            <h3>
+
+                                <i class="bi bi-check-circle-fill"></i>
+
+                                Stay
+
+                            </h3>
+
+                            <h5>
+
+                                Employee is predicted to stay.
+
+                            </h5>
+
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="alert alert-primary">
+
+                            <h3>
+
+                                Probability
+
+                            </h3>
+
+                            <h2>
+
+                                {{ "%.2f"|format(history.probability * 100) }}%
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h4 class="text-primary">
+
+                    <i class="bi bi-person-lines-fill"></i>
+
+                    Employee Information
+
+                </h4>
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered table-striped">
+
+                        <thead class="table-primary">
+
+                            <tr>
+
+                                <th width="40%">
+
+                                    Field
+
+                                </th>
+
+                                <th>
+
+                                    Value
+
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+    <td>Age</td>
+    <td>{{ history.age }}</td>
+</tr>
+
+<tr>
+    <td>Gender</td>
+    <td>{{ history.gender }}</td>
+</tr>
+
+<tr>
+    <td>Marital Status</td>
+    <td>{{ history.marital_status }}</td>
+</tr>
+
+<tr>
+    <td>Department</td>
+    <td>{{ history.department }}</td>
+</tr>
+
+<tr>
+    <td>Job Role</td>
+    <td>{{ history.job_role }}</td>
+</tr>
+
+<tr>
+    <td>Job Level</td>
+    <td>{{ history.job_level }}</td>
+</tr>
+
+<tr>
+    <td>Monthly Income</td>
+    <td>{{ history.monthly_income }}</td>
+</tr>
+
+<tr>
+    <td>Hourly Rate</td>
+    <td>{{ history.hourly_rate }}</td>
+</tr>
+
+<tr>
+    <td>Years at Company</td>
+    <td>{{ history.years_at_company }}</td>
+</tr>
+
+<tr>
+    <td>Years in Current Role</td>
+    <td>{{ history.years_in_current_role }}</td>
+</tr>
+
+<tr>
+    <td>Years Since Last Promotion</td>
+    <td>{{ history.years_since_last_promotion }}</td>
+</tr>
+
+<tr>
+    <td>Work Life Balance</td>
+    <td>{{ history.work_life_balance }}</td>
+</tr>
+
+<tr>
+    <td>Job Satisfaction</td>
+    <td>{{ history.job_satisfaction }}</td>
+</tr>
+
+<tr>
+    <td>Performance Rating</td>
+    <td>{{ history.performance_rating }}</td>
+</tr>
+
+<tr>
+    <td>Training Hours Last Year</td>
+    <td>{{ history.training_hours_last_year }}</td>
+</tr>
+
+<tr>
+    <td>Overtime</td>
+    <td>{{ history.overtime }}</td>
+</tr>
+
+<tr>
+    <td>Project Count</td>
+    <td>{{ history.project_count }}</td>
+</tr>
+
+<tr>
+    <td>Average Hours Worked Per Week</td>
+    <td>{{ history.average_hours_worked_per_week }}</td>
+</tr>
+
+<tr>
+    <td>Absenteeism</td>
+    <td>{{ history.absenteeism }}</td>
+</tr>
+
+<tr>
+    <td>Work Environment Satisfaction</td>
+    <td>{{ history.work_environment_satisfaction }}</td>
+</tr>
+
+<tr>
+    <td>Relationship with Manager</td>
+    <td>{{ history.relationship_with_manager }}</td>
+</tr>
+
+<tr>
+    <td>Job Involvement</td>
+    <td>{{ history.job_involvement }}</td>
+</tr>
+
+<tr>
+    <td>Distance From Home</td>
+    <td>{{ history.distance_from_home }}</td>
+</tr>
+
+<tr>
+    <td>Number of Companies Worked</td>
+    <td>{{ history.number_of_companies_worked }}</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<hr>
+
+<div class="row">
+
+    <div class="col-12">
+
+        {% if history.prediction == "Yes" %}
+
+        <div class="alert alert-warning">
+
+            <h5>
+
+                <i class="bi bi-lightbulb-fill"></i>
+
+                Recommendation
+
+            </h5>
+
+            <p class="mb-0">
+
+                Berdasarkan hasil prediksi, karyawan ini memiliki
+                kemungkinan mengalami <strong>Attrition</strong>.
+                Perusahaan disarankan melakukan evaluasi terhadap
+                kepuasan kerja, keseimbangan pekerjaan, beban kerja,
+                serta hubungan dengan atasan agar risiko resign
+                dapat diminimalkan.
+
+            </p>
+
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-success">
+
+            <h5>
+
+                <i class="bi bi-check-circle-fill"></i>
+
+                Recommendation
+
+            </h5>
+
+            <p class="mb-0">
+
+                Berdasarkan hasil prediksi, karyawan diperkirakan
+                akan tetap bekerja di perusahaan.
+                Tetap pertahankan lingkungan kerja yang nyaman,
+                kesempatan pengembangan karier,
+                serta budaya kerja yang positif.
+
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+<hr>
+
+<div class="row">
+
+    <div class="col-md-12 text-center">
+
+        <a
+
+            href="{{ url_for('history') }}"
+
+            class="btn btn-primary btn-lg me-2">
+
+            <i class="bi bi-arrow-left-circle-fill"></i>
+
+            Back to History
+
+        </a>
+
+        <a
+
+            href="{{ url_for('dashboard') }}"
+
+            class="btn btn-success btn-lg me-2">
+
+            <i class="bi bi-speedometer2"></i>
+
+            Dashboard
+
+        </a>
+
+        <a
+
+            href="{{ url_for('index') }}"
+
+            class="btn btn-secondary btn-lg">
+
+            <i class="bi bi-house-fill"></i>
+
+            Home
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

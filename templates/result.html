@@ -1,0 +1,388 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Prediction Result | {{ project_name }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-10">
+
+        <div class="card shadow border-0">
+
+            <div class="card-header bg-primary text-white">
+
+                <h3 class="mb-0">
+
+                    <i class="bi bi-bar-chart-fill"></i>
+
+                    Prediction Result
+
+                </h3>
+
+            </div>
+
+            <div class="card-body">
+
+                {% if prediction == "Yes" %}
+
+                <div class="alert alert-danger text-center">
+
+                    <h2>
+
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+
+                        Employee is Predicted to Leave
+
+                    </h2>
+
+                    <h4 class="mt-3">
+
+                        Attrition : YES
+
+                    </h4>
+
+                </div>
+
+                {% else %}
+
+                <div class="alert alert-success text-center">
+
+                    <h2>
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        Employee is Predicted to Stay
+
+                    </h2>
+
+                    <h4 class="mt-3">
+
+                        Attrition : NO
+
+                    </h4>
+
+                </div>
+
+                {% endif %}
+
+                <div class="row mt-4">
+
+                    <div class="col-md-6">
+
+                        <div class="card border-primary">
+
+                            <div class="card-body text-center">
+
+                                <h5>
+
+                                    Prediction
+
+                                </h5>
+
+                                <h2 class="fw-bold">
+
+                                    {{ prediction }}
+
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="card border-success">
+
+                            <div class="card-body text-center">
+
+                                <h5>
+
+                                    Probability
+
+                                </h5>
+
+                                <h2 class="fw-bold">
+
+                                    {{ "%.2f"|format(probability * 100) }}%
+
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <h4 class="text-primary">
+
+                    <i class="bi bi-person-vcard-fill"></i>
+
+                    Employee Information
+
+                </h4>
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered table-striped align-middle">
+
+                        <thead class="table-primary">
+
+                            <tr>
+
+                                <th style="width:40%">Field</th>
+
+                                <th>Value</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+    <td>Age</td>
+    <td>{{ data.Age }}</td>
+</tr>
+
+<tr>
+    <td>Gender</td>
+    <td>{{ data.Gender }}</td>
+</tr>
+
+<tr>
+    <td>Marital Status</td>
+    <td>{{ data.Marital_Status }}</td>
+</tr>
+
+<tr>
+    <td>Department</td>
+    <td>{{ data.Department }}</td>
+</tr>
+
+<tr>
+    <td>Job Role</td>
+    <td>{{ data.Job_Role }}</td>
+</tr>
+
+<tr>
+    <td>Job Level</td>
+    <td>{{ data.Job_Level }}</td>
+</tr>
+
+<tr>
+    <td>Monthly Income</td>
+    <td>{{ data.Monthly_Income }}</td>
+</tr>
+
+<tr>
+    <td>Hourly Rate</td>
+    <td>{{ data.Hourly_Rate }}</td>
+</tr>
+
+<tr>
+    <td>Years at Company</td>
+    <td>{{ data.Years_at_Company }}</td>
+</tr>
+
+<tr>
+    <td>Years in Current Role</td>
+    <td>{{ data.Years_in_Current_Role }}</td>
+</tr>
+
+<tr>
+    <td>Years Since Last Promotion</td>
+    <td>{{ data.Years_Since_Last_Promotion }}</td>
+</tr>
+
+<tr>
+    <td>Work Life Balance</td>
+    <td>{{ data.Work_Life_Balance }}</td>
+</tr>
+
+<tr>
+    <td>Job Satisfaction</td>
+    <td>{{ data.Job_Satisfaction }}</td>
+</tr>
+
+<tr>
+    <td>Performance Rating</td>
+    <td>{{ data.Performance_Rating }}</td>
+</tr>
+
+<tr>
+    <td>Training Hours Last Year</td>
+    <td>{{ data.Training_Hours_Last_Year }}</td>
+</tr>
+
+<tr>
+    <td>Overtime</td>
+    <td>{{ data.Overtime }}</td>
+</tr>
+
+<tr>
+    <td>Project Count</td>
+    <td>{{ data.Project_Count }}</td>
+</tr>
+
+<tr>
+    <td>Average Hours Worked Per Week</td>
+    <td>{{ data.Average_Hours_Worked_Per_Week }}</td>
+</tr>
+
+<tr>
+    <td>Absenteeism</td>
+    <td>{{ data.Absenteeism }}</td>
+</tr>
+
+<tr>
+    <td>Work Environment Satisfaction</td>
+    <td>{{ data.Work_Environment_Satisfaction }}</td>
+</tr>
+
+<tr>
+    <td>Relationship with Manager</td>
+    <td>{{ data.Relationship_with_Manager }}</td>
+</tr>
+
+<tr>
+    <td>Job Involvement</td>
+    <td>{{ data.Job_Involvement }}</td>
+</tr>
+
+<tr>
+    <td>Distance From Home</td>
+    <td>{{ data.Distance_From_Home }}</td>
+</tr>
+
+<tr>
+    <td>Number of Companies Worked</td>
+    <td>{{ data.Number_of_Companies_Worked }}</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<hr class="my-4">
+
+<div class="row text-center">
+
+    <div class="col-md-12">
+
+        {% if prediction == "Yes" %}
+
+        <div class="alert alert-warning">
+
+            <h5>
+
+                <i class="bi bi-lightbulb-fill"></i>
+
+                Recommendation
+
+            </h5>
+
+            <p class="mb-0">
+
+                Employee memiliki kemungkinan tinggi untuk mengalami
+                <strong>Attrition</strong>.
+                Disarankan melakukan evaluasi terhadap kepuasan kerja,
+                beban kerja, lingkungan kerja, serta memberikan perhatian
+                lebih dari pihak manajemen.
+
+            </p>
+
+        </div>
+
+        {% else %}
+
+        <div class="alert alert-info">
+
+            <h5>
+
+                <i class="bi bi-emoji-smile-fill"></i>
+
+                Recommendation
+
+            </h5>
+
+            <p class="mb-0">
+
+                Employee diprediksi akan tetap bekerja di perusahaan.
+                Tetap pertahankan lingkungan kerja yang baik,
+                kesempatan pengembangan karier,
+                dan keseimbangan kehidupan kerja.
+
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+<hr>
+
+<div class="d-flex flex-wrap justify-content-center gap-3">
+
+    <a
+
+        href="{{ url_for('index') }}"
+
+        class="btn btn-primary btn-lg">
+
+        <i class="bi bi-arrow-repeat"></i>
+
+        Predict Again
+
+    </a>
+
+    <a
+
+        href="{{ url_for('dashboard') }}"
+
+        class="btn btn-success btn-lg">
+
+        <i class="bi bi-speedometer2"></i>
+
+        Dashboard
+
+    </a>
+
+    <a
+
+        href="{{ url_for('history') }}"
+
+        class="btn btn-secondary btn-lg">
+
+        <i class="bi bi-clock-history"></i>
+
+        History
+
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+venv/
+.env
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Database
+*.db
+instance/
+
+# Python cache
+.pytest_cache/
+
+# TensorBoard
+logs/
+
+# OS
+Thumbs.db
+.DS_Store

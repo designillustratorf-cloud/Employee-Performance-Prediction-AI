@@ -1,0 +1,652 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+About | {{ project_name }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row mb-5">
+
+    <div class="col-12 text-center">
+
+        <h1 class="text-primary">
+
+            <i class="bi bi-info-circle-fill"></i>
+
+            About This Project
+
+        </h1>
+
+        <p class="lead text-muted">
+
+            Employee Attrition Prediction Using
+            Artificial Neural Network (ANN)
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-7 mb-4">
+
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-header bg-primary text-white">
+
+                <h4 class="mb-0">
+
+                    <i class="bi bi-file-earmark-text-fill"></i>
+
+                    Project Description
+
+                </h4>
+
+            </div>
+
+            <div class="card-body">
+
+                <p align="justify">
+
+                    Aplikasi ini dikembangkan untuk membantu
+                    memprediksi kemungkinan seorang karyawan
+                    akan mengalami <strong>Employee Attrition</strong>
+                    menggunakan metode
+                    <strong>Artificial Neural Network (ANN)</strong>.
+
+                </p>
+
+                <p align="justify">
+
+                    Sistem memanfaatkan data karakteristik karyawan,
+                    seperti usia, jabatan, pendapatan, kepuasan kerja,
+                    work-life balance, lembur, dan berbagai faktor lainnya
+                    untuk menghasilkan prediksi secara otomatis.
+
+                </p>
+
+                <p align="justify">
+
+                    Hasil prediksi diharapkan dapat membantu perusahaan
+                    dalam mengambil keputusan yang lebih cepat
+                    untuk meningkatkan retensi karyawan dan
+                    mengurangi tingkat turnover.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-5 mb-4">
+
+        <div class="card shadow border-0 h-100">
+
+            <div class="card-header bg-success text-white">
+
+                <h4 class="mb-0">
+
+                    <i class="bi bi-bullseye"></i>
+
+                    Project Objective
+
+                </h4>
+
+            </div>
+
+            <div class="card-body">
+
+                <ul>
+
+                    <li>
+
+                        Predict Employee Attrition.
+
+                    </li>
+
+                    <li>
+
+                        Assist HR decision making.
+
+                    </li>
+
+                    <li>
+
+                        Improve employee retention.
+
+                    </li>
+
+                    <li>
+
+                        Utilize Artificial Intelligence
+                        in Human Resource Management.
+
+                    </li>
+
+                    <li>
+
+                        Demonstrate ANN implementation
+                        using Flask.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-6 mb-4">
+
+    <div class="card shadow border-0 h-100">
+
+        <div class="card-header bg-info text-white">
+
+            <h4 class="mb-0">
+
+                <i class="bi bi-cpu-fill"></i>
+
+                Technology Stack
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-striped">
+
+                <tbody>
+
+                    <tr>
+
+                        <th width="40%">
+
+                            Programming Language
+
+                        </th>
+
+                        <td>
+
+                            Python 3
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>
+
+                            Framework
+
+                        </th>
+
+                        <td>
+
+                            Flask
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>
+
+                            Machine Learning
+
+                        </th>
+
+                        <td>
+
+                            TensorFlow / Keras
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>
+
+                            Data Processing
+
+                        </th>
+
+                        <td>
+
+                            Pandas & NumPy
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>
+
+                            Preprocessing
+
+                        </th>
+
+                        <td>
+
+                            Scikit-learn
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>
+
+                            Visualization
+
+                        </th>
+
+                        <td>
+
+                            Matplotlib
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>
+
+                            Database
+
+                        </th>
+
+                        <td>
+
+                            SQLite
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th>
+
+                            Frontend
+
+                        </th>
+
+                        <td>
+
+                            HTML5, CSS3, Bootstrap 5
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-lg-6 mb-4">
+
+    <div class="card shadow border-0 h-100">
+
+        <div class="card-header bg-warning">
+
+            <h4 class="mb-0">
+
+                <i class="bi bi-diagram-3-fill"></i>
+
+                ANN Model Overview
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <ul class="list-group">
+
+                <li class="list-group-item">
+
+                    Dataset :
+                    Employee Attrition Dataset
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Input Features :
+                    24 Employee Attributes
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Target :
+                    Attrition (Yes / No)
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Algorithm :
+                    Artificial Neural Network (ANN)
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Hidden Layer :
+                    Dense + ReLU + Dropout
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Output Layer :
+                    Sigmoid
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Loss Function :
+                    Binary Crossentropy
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Optimizer :
+                    Adam
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-8 mb-4">
+
+    <div class="card shadow border-0 h-100">
+
+        <div class="card-header bg-dark text-white">
+
+            <h4 class="mb-0">
+
+                <i class="bi bi-person-badge-fill"></i>
+
+                Developer Information
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-borderless">
+
+                <tr>
+
+                    <th width="35%">
+
+                        Project
+
+                    </th>
+
+                    <td>
+
+                        Employee Attrition Prediction Using ANN
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Developer
+
+                    </th>
+
+                    <td>
+
+                        Muhammad Faris
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Study Program
+
+                    </th>
+
+                    <td>
+
+                        Teknik Informatika
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        University
+
+                    </th>
+
+                    <td>
+
+                        Universitas Bale Bandung
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Framework
+
+                    </th>
+
+                    <td>
+
+                        Flask + TensorFlow + Scikit-learn
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Database
+
+                    </th>
+
+                    <td>
+
+                        SQLite
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Version
+
+                    </th>
+
+                    <td>
+
+                        {{ project_version }}
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="col-lg-4 mb-4">
+
+    <div class="card shadow border-0 h-100">
+
+        <div class="card-header bg-primary text-white">
+
+            <h4 class="mb-0">
+
+                <i class="bi bi-lightbulb-fill"></i>
+
+                Features
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <ul class="list-group">
+
+                <li class="list-group-item">
+
+                    Employee Attrition Prediction
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Artificial Neural Network
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Prediction History
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Dashboard & Metrics
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Classification Report
+
+                </li>
+
+                <li class="list-group-item">
+
+                    ROC Curve
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Confusion Matrix
+
+                </li>
+
+                <li class="list-group-item">
+
+                    Responsive Bootstrap UI
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<hr class="my-4">
+
+<div class="row">
+
+    <div class="col-md-12 text-center">
+
+        <a
+
+            href="{{ url_for('index') }}"
+
+            class="btn btn-primary btn-lg me-2">
+
+            <i class="bi bi-house-fill"></i>
+
+            Home
+
+        </a>
+
+        <a
+
+            href="{{ url_for('dashboard') }}"
+
+            class="btn btn-success btn-lg">
+
+            <i class="bi bi-speedometer2"></i>
+
+            Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
